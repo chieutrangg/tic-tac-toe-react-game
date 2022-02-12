@@ -37,13 +37,19 @@ const renderMoves = () =>
     );
   });
 
-    return (
+  return (
+    <>
+      <h1>React Tic Tac Toe - With Hooks</h1>
+      <Board squares={history[stepNumber]} onClick={handleClick} />
+      <div className="info-wrapper">
         <div>
-          <h1>React Tic Tac Toe </h1>
-          
-          </div>
-       
-      );
-    };
-    
-    export default Game;
+          <h3>History</h3>
+          {renderMoves()}
+        </div>
+        <h3>{winner ? "Winner: " + winner : "Next Player: " + xO}</h3>
+      </div>
+    </>
+  );
+};
+
+export default Game;
